@@ -1,0 +1,2 @@
+type = process
+command = /opt/bin/live_audio_v2_glasses.sh

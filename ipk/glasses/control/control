@@ -1,0 +1,7 @@
+Package: live-audio-v2-glasses
+Version: 0.0.1
+Maintainer: funnel
+Description: Live audio V2.
+Homepage: https://github.com/funneld/djifpv_live_audio_V2
+Architecture: pigeon-glasses
+Depends: dinit, ffmpeg
