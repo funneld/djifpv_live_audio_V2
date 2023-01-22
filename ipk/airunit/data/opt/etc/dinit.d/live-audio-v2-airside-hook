@@ -1,0 +1,3 @@
+type = scripted
+command = modmanager enable dji_shuttle live_audio_v2_au
+stop-command = modmanager disable dji_shuttle live_audio_v2_au
