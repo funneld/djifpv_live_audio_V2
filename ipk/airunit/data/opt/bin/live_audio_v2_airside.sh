@@ -1,10 +1,12 @@
 #!/system/bin/sh
 
-if grep -q "WM150" /system/etc/dji.json
-then
-	sleep 5
-	echo "Starting live audio DUML command..."
-	dji_mb_ctrl -S test -R local -g 1 -t 1 -s 2 -c E1 -a 0 -q i 01
+if grep -q "WM150" /system/etc/dji.json; then
+	if [ -d "/storage/sdcard0" ]; then
+		echo "SD card found. Live audio will start only while recording."
+	else
+		echo "No SD card found. Start tinycap."
+		LD_PRELOAD="/opt/etc/preload.d/liblive_audio_v2_au.so" tinycap /dev/null -r 48000 -b 16
+	fi
 else
-	echo "AU NOT COMPATIBLE. EXIT."
+	echo "Airunit not compatible. Exit."
 fi

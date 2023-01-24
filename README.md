@@ -4,6 +4,8 @@ New version compatible with V1 and V2 goggles. Normal Airunit with an integrated
 
 Packages with the matching name must be installed on both airunit and goggles.
 
+If an SD card is inserted in the airunit live audio will start only while recording.
+
 Audio volume can be set:
 - by playing back a video that doesn't contain any audio and set the volume from there.
 - with CLI command `setprop persist.dji.volume.headphone 6` with persistent values from 1-6.
@@ -18,6 +20,11 @@ Install:
 - `opkg install /tmp/package-name.ipk`
 
 Alternative method:  https://github.com/fpv-wtf/wtfos/wiki/Installing-third-party-packages
+
+SD card method:
+- put the `package-name.ipk` onto the SD card
+- run `test_hal_storage -c "0 volume detach_pc"`
+- run `opkg install /storage/sdcard0/package-name.ipk`
 
 Make ipk:
 - `make ipk`
